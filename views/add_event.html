@@ -1,0 +1,54 @@
+<html>
+    <head>
+		<link href="bootstrap.min.css" rel="stylesheet" />
+        <style>
+            body {
+                padding: 10px;
+                background-color: rgb(173, 164, 164);
+            }
+        </style>
+	</head>
+    
+    <body>
+        <h1 class="text-center">
+            Enter Event Details:
+        </h1>
+        <div class="mb-3" style="margin-left: 300px; margin-right: 300px; background-color: rgb(221, 229, 237); padding: 10px; border-radius: 20px;">
+            <form action="/ziyang/add_event/submit" method="POST">
+            
+                <label for="event_name">Event Name:</label>
+                <input type="text" name="event_name" class="form-control" required/> </br>
+                
+                <label for="description">Description:</label>
+                <input type="text" name="description" class="form-control"/> </br>
+
+                <label for="duration">Start Date Time:</label>
+                <input type="datetime-local" name="start_date_time" class="form-control" required/> </br>
+
+                <label for="duration">Duration (min):</label>
+                <input type="number" name="duration" class="form-control" required/> </br>
+
+                <label for="status">Status:</label>
+                <select name="status" class="form-control">
+                    <option value="true">Active</option>
+                    <option value="false">Inactive</option>
+                </select> </br>
+
+                <label for="image_path">Image path:</label>
+                <input type="text" name="image_path" class="form-control"/> </br>
+
+                <label for="capacity">Capacity:</label>
+                <input type="number" name="capacity" class="form-control" required/> </br>
+
+                <label for="tickets_available">Tickets Available:</label>
+                <input type="number" name="tickets_available" class="form-control"/> </br>
+
+                <label for="category_id">Category ID:</label>
+                <input type="text" name="category_id" class="form-control" required/> </br>
+                <button class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+        
+    </body>
+
+</html>

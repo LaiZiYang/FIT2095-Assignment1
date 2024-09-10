@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <link href="bootstrap.min.css" rel="stylesheet" />
+        <style>
+            body {
+            font-family: Verdana, sans-serif;
+            background-color: rgb(173, 164, 164);
+            padding: 10px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div style="background-color: rgb(221, 229, 237) ; margin: 20px; border-radius: 10px;">
+            <h1 class="text-center" style="font-weight: bold;">
+                Enter the ID of the event you want to delete:
+            </h1>
+        </div>
+        <div class="mb-3" style="margin-left: 300px; margin-right: 300px; background-color: rgb(221, 229, 237); padding: 10px; border-radius: 20px;">
+            <form action="/ziyang/delete_event_by_id/submit" method="post">
+                <label for="event_id">Event ID:</label>
+                <input type="text" name="event_id" class="form-control" required/> </br>
+                <button class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+        
+    </body>
+</html>

@@ -1,0 +1,87 @@
+<html>
+
+<head>
+    <link href="bootstrap.min.css" rel="stylesheet" />
+    <style>
+        body {
+            font-family: Verdana, sans-serif;
+            background-color: rgb(173, 164, 164);
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="background-color: rgb(221, 229, 237) ; margin: 20px; border-radius: 10px;">
+        <h1 class="text-center" style="font-weight: bold;">
+            Event List
+        </h1>
+    </div>
+    
+    </br>
+    <h3 style="font-weight: bold;">
+        All events :
+    </h3>
+    <div class="container-fluid">
+        <table class="table">
+            <thead class="table-dark">
+                <tr>
+                    <th></th>
+                    <th>ID</th>
+                    <th>Event Name</th>
+                    <th>Start Time</th>
+                    <th>End Time</th>
+                    <th>Duration</th>
+                    <th>isActive</th>
+                    <th>Capacity</th>
+                    <th>Tickets Available</th>
+                    <th>Category ID</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tfoot>
+                <% for ( let i =0; i< events.length;i++){ %>
+                    <tr>
+                        <td>
+                            <img src=<%= events[i].imagePath %> alt="">
+                        </td>
+                        <td>
+                            <%= events[i].id %>
+                        </td>
+                        <td>
+                            <%= events[i].name %>
+                        </td>
+                        <td>
+                            <%= events[i].prettyPrintDateTime(events[i].startDateTime) %>
+                        </td>
+                        <td>
+                            <%= events[i].prettyPrintDateTime(events[i].endDateTime) %>
+                        </td>
+                        <td>
+                            <%= events[i].duration %>
+                        </td>
+                        <td>
+                            <%= events[i].isActive %>
+                        </td>
+                        <td>
+                            <%= events[i].capacity %>
+                        </td>
+                        <td>
+                            <%= events[i].ticketsAvailable %>
+                        </td>
+                        <td>
+                            <%= events[i].categoryId %>
+                        </td>
+                        <td>
+                            <a href= <%= events[i].detailsLink %>><button class="btn btn-primary">View Event Details</button></a>
+                        </td>
+                    </tr>
+                    <% }%>
+            </tfoot>
+            
+     </table>
+    </div>
+        
+</body>
+
+</html>

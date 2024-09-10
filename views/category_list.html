@@ -1,0 +1,69 @@
+<html>
+
+<head>
+    <link href="bootstrap.min.css" rel="stylesheet" />
+    <style>
+        body {
+            font-family: Verdana, sans-serif;
+            background-color: rgb(173, 164, 164);
+            padding: 10px;
+        }
+
+        table {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="background-color: rgb(221, 229, 237) ; margin: 20px; border-radius: 10px;">
+        <h1 class="text-center" style="font-weight: bold;">
+            Category List
+        </h1>
+    </div>
+    
+    </br>
+    <h3 style="font-weight: bold;">
+        All Categories :
+    </h3>
+    <div class="container-fluid">
+        <table class="table">
+            <thead class="table-dark">
+                <tr>
+                    <th></th>
+                    <th>ID</th>
+                    <th>Category Name</th>
+                    <th>Description</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tfoot>
+                <% for ( let i =0; i< categories.length;i++){ %>
+                    <tr>
+                        <td>
+                            <img src=<%= categories[i].imagePath %> alt="">
+                        </td>
+                        <td>
+                            <%= categories[i].id %>
+                        </td>
+                        <td>
+                            <%= categories[i].name %>
+                        </td>
+                        <td>
+                            <%= categories[i].description %>
+                        </td>
+                        <td>
+                            <a href= <%= categories[i].detailsLink %>><button class="btn btn-primary">View Category Details</button></a>
+                        </td>
+                        <td>
+                        </td>
+                    </tr>
+                    <% }%>
+            </tfoot>
+            
+     </table>
+    </div>
+        
+</body>
+
+</html>
